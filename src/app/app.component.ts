@@ -12,6 +12,7 @@ export class AppComponent {
 
   refreshOutput() {
     let outputTemp: string = "";
+    this.outputArray = [];
     for (var i = 0; i < this.inputText.length; i++) {
       let char = this.inputText.charAt(i);
       switch(char) {
