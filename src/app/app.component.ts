@@ -6,5 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'text-to-cells';
+  title = 'Text2Cells';
+  inputText: string;
+  outputArray: string[] = [];
+
+  refreshOutput() {
+    let outputTemp: string = "";
+    for (var i = 0; i < this.inputText.length; i++) {
+      let char = this.inputText.charAt(i);
+      switch(char) {
+        case '\n':
+        case '\t':
+        case '-':
+          break;
+        default:
+          outputTemp += char;
+      }
+    }
+    if(outputTemp.length<256) {
+      this.outputArray[0] = outputTemp;
+    } else {
+      
+    }
+  }
+
 }
