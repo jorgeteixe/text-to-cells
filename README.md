@@ -1,9 +1,6 @@
 # Text To Cells
 
-Simple app to solve a daily routine problem.
-
-## Demo
-[Link to demo](https://text2cells.jorgeteixeira.es)
+Simple app to solve a daily routine problem. Check the [demo.](https://text2cells.jorgeteixeira.es)
 
 
 ### Problem
