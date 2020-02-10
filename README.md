@@ -11,9 +11,10 @@ A friend has to copy from PDFs to a software to create bills, and the software h
 An app that converts the text copied from PDFs with '\t' and '\n' characters 256 lenght cells without format.
 
 ### Example
-From:
+**From:**
 
 ![From this PDF](example/pdf.png)
-To:
+
+**To:**
 
 ![To this output](example/text2cells.png)
