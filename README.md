@@ -12,6 +12,8 @@ An app that converts the text copied from PDFs with '\t' and '\n' characters 256
 
 ### Example
 From:
+
 ![From this PDF](example/pdf.png)
 To:
+
 ![To this output](example/text2cells.png)
