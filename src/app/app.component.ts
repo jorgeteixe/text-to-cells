@@ -48,7 +48,7 @@ export class AppComponent {
           actualParagraph++;
         }
       } while (!end);
-      this.clicked = [];
+      this.clicked.length = 0;
     }
   }
 
