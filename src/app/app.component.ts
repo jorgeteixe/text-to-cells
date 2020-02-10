@@ -7,15 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Text2Cells';
-  inputText: string;
+  inputText = '';
   outputArray: string[] = [];
+  readonly MAX_VALUE = 256;
+  clicked: number[] = [];
 
   refreshOutput() {
-    let outputTemp: string = "";
+    let outputTemp = '';
     this.outputArray = [];
-    for (var i = 0; i < this.inputText.length; i++) {
-      let char = this.inputText.charAt(i);
-      switch(char) {
+    for (let i = 0; i < this.inputText.length; i++) {
+      const char = this.inputText.charAt(i);
+      switch (char) {
         case '\n':
         case '\t':
         case '-':
@@ -24,11 +26,46 @@ export class AppComponent {
           outputTemp += char;
       }
     }
-    if(outputTemp.length<256) {
+    if (outputTemp.length < this.MAX_VALUE) {
       this.outputArray[0] = outputTemp;
     } else {
-      
+      let actualParagraph = 0;
+      let end = false;
+      let nextCut = this.MAX_VALUE;
+      let lastCut = 0;
+      do {
+        const cutHere = Math.max(
+          outputTemp.substring(0, nextCut).lastIndexOf(','),
+          outputTemp.substring(0, nextCut).lastIndexOf('.'),
+        ) + 1;
+        this.outputArray[actualParagraph] = outputTemp.substring(lastCut, cutHere);
+        if (outputTemp.length - cutHere < this.MAX_VALUE) {
+          end = true;
+          this.outputArray[actualParagraph + 1] = outputTemp.substring(cutHere);
+        } else {
+          nextCut = cutHere + this.MAX_VALUE;
+          lastCut = cutHere;
+          actualParagraph++;
+        }
+      } while (!end);
+      this.clicked = [];
     }
+  }
+
+  // Copied from https://stackoverflow.com/questions/49102724/angular-5-copy-to-clipboard
+  copy(val: string, index: number) {
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = val;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+    this.clicked.push(index);
   }
 
 }
