@@ -1,0 +1,7 @@
+.clear-input {
+  cursor: pointer;
+}
+
+.clear-input:hover {
+  text-decoration: underline;
+}
