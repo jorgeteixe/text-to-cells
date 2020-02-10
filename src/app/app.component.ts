@@ -15,6 +15,7 @@ export class AppComponent {
   refreshOutput() {
     let outputTemp = '';
     this.outputArray = [];
+    this.clicked.length = 0;
     for (let i = 0; i < this.inputText.length; i++) {
       const char = this.inputText.charAt(i);
       switch (char) {
@@ -48,7 +49,6 @@ export class AppComponent {
           actualParagraph++;
         }
       } while (!end);
-      this.clicked.length = 0;
     }
   }
 
