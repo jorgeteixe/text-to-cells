@@ -20,6 +20,10 @@ export class AppComponent {
       const char = this.inputText.charAt(i);
       switch (char) {
         case '\n':
+          if (this.inputText.charAt(i - 1) !== '-') {
+            outputTemp += ' ';
+          }
+          break;
         case '\t':
         case '-':
           break;
