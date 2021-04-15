@@ -1,0 +1,62 @@
+.app {
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 800px;
+    font-family: sans-serif;
+}
+
+.title {
+    margin-left: 10px;
+}
+
+.title-version {
+    margin: 0 10px;
+    font-size: .8em;
+}
+
+.title-clear {
+    margin: 10px 10px 0 0;
+    font-weight: lighter;
+    color: grey;
+    cursor: pointer;
+    float: right;
+    font-size: small;
+}
+
+.title-clear:hover {
+    text-decoration: underline;
+}
+
+.input {
+    margin: 10px;
+}
+
+.input-textarea {
+    width: 100%;
+}
+
+.paragraph {
+    width: 100%;
+    min-height: 50px;
+    margin: 20px 0;
+}
+
+.paragraph-text {
+    float: left;
+    width: 80%;
+}
+
+.paragraph-copy {
+    margin-top: 10px;
+    float: right;
+    width: 10%;
+    cursor: pointer;
+}
+
+.paragraph-copy:hover {
+    text-decoration: underline;
+}
+
+.grey {
+    color: grey;
+}

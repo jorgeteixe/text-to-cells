@@ -32,6 +32,7 @@ class App extends React.Component {
     }
 
     createParagraphs() {
+        if (this.state.input.length === 0) return;
         return this.splitInput(this.state.input).map((value, index) => {
             return <Paragraph text={value} key={index} />
         });
@@ -40,7 +41,12 @@ class App extends React.Component {
     render() {
         const input = this.state.input;
         return (
-            <div>
+            <div className="app">
+                <h1 className="title">
+                    text2cells
+                    <span className="title-version">v1.0</span>
+                    <span className="title-clear" onClick={() => this.setState({ input: '' })}>limpiar</span>
+                </h1>
                 <Input value={input} handler={this.handleChange} />
                 {this.createParagraphs()}
             </div>

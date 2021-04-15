@@ -13,8 +13,8 @@ class Input extends React.Component {
     render() {
         const value = this.props.value;
         return (
-            <div>
-                <textarea value={value} onChange={this.handleChange} />
+            <div className="input">
+                <textarea rows="6" className="input-textarea" value={value} onChange={this.handleChange} />
             </div>
         )
     }
