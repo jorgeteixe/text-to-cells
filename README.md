@@ -1,5 +1,5 @@
 # Text To Cells [![Netlify Status](https://api.netlify.com/api/v1/badges/b5ea04b7-97f6-4149-aa8b-8b15638ff7ac/deploy-status)](https://app.netlify.com/sites/jorgeteixe2cells/deploys)
-Simple app to solve a daily routine problem. Check the [demo.](https://jorgeteixe2cells.netlify.app/)
+Simple app to solve a daily routine problem. Check the [demo.](https://text2cells.netlify.app/)
 
 
 ### Problem
